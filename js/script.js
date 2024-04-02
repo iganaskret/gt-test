@@ -42,7 +42,6 @@ function getRandom(jsonData) {
 function loadSingleStoryJSON(randomIds) {
     Promise.all(randomIds.map(id => 
         // Build API URL with id
-        // let singleUrl = singleStoryUrl + id + ".json";
         fetch(singleStoryUrl + id + ".json")
           .then(response => response.json())
           .then(async singleStory => {
@@ -56,9 +55,10 @@ function loadSingleStoryJSON(randomIds) {
             story.url = singleStory.url;
             story.title = singleStory.title;
 
-            // Add the karma
+            // Add the karma: build author URL
             let authorUrl = singleAuthorUrl + singleStory.by + ".json";
 
+            // Fetch the karma
             await fetch(authorUrl)
             .then(response => response.json())
             .then(authorInfo => {
@@ -74,6 +74,8 @@ function loadSingleStoryJSON(randomIds) {
         stories.sort((a, b) => {
             return  a.score - b.score;
         });
+
+        // Displaying fetched data
         displayStories(stories);
     })
 
@@ -85,7 +87,8 @@ function displayStories(stories) {
 
 function displayStory(story, index) {
     console.log(story)
-    // Create a clone
+
+    // Create a clone of a template
     const clone = document
     .querySelector("template#story")
     .content.cloneNode(true);
@@ -104,7 +107,7 @@ function displayStory(story, index) {
     document.querySelector(".content-main").appendChild(clone);
 }
 
-//prototype Story
+//prototype Story object
 const Story = {
   id: "-id-",
   author: "-author-",
