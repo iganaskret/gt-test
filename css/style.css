@@ -76,32 +76,6 @@
     text-align: center;
   }
   
-  /* main grid*/
-  
-  main {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    grid-gap: 0;
-  }
-  
-  .main-header {
-    border: none;
-    font-size: 4em;
-    text-align: left;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .main-subheader,
-  .main-p {
-    padding: 5px;
-    margin: 0;
-  }
-  
-  .main-p {
-    font-size: 1.3em;
-  }
-  
   .single-story {
     border-bottom: solid 2px black; 
   }
