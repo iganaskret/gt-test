@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOP STORIES TODAY</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-box">
+          Your daily dose of random facts. Only top stories.
+        </div>
+        <h1 class="title">TOP STORIES TODAY</h1>
+        <h2>April 2024</h2>
+      </div>
+      <div class="page-desc">
+        Unofficial website serving you random news. No algorithm, no problem.
+      </div>
+    </header>
+
+    <main>
+        <div class="content-main">
+
+        </div>
+    </main>
+
+    <template id="story">
+        <div class="single-story">
+            <h2 data-field="title">TITLE</h2>
+              <a href="#" data-field="url">URL</a>
+              <p>Timestamp: <span data-field="timestamp">TIMESTAMP </span> </p>
+              <p>Score: <span data-field="score">SCORE </span> </p>
+              <p>Author: <span data-field="author">AUTHOR </span> </p>
+              <p>Karma: <span data-field="karma">KARMA </span> </p>
+        </div>
+      </template>
+    <script src="js/script.js"></script>
+  </body>
+</html>
