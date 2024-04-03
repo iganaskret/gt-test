@@ -11,7 +11,8 @@ let singleStoryUrl = "https://hacker-news.firebaseio.com/v0/item/";
 let singleAuthorUrl = "https://hacker-news.firebaseio.com/v0/user/";
 
 function start() {
-  loadJSON();
+    document.querySelector("#refresh-btn").addEventListener("click", ()=>{location.reload();});
+    loadJSON();
 }
 
 // Fetching top stories
@@ -82,6 +83,8 @@ function loadSingleStoryJSON(randomIds) {
 }
 
 function displayStories(stories) {
+    // remove loader
+    document.querySelector("#loader").classList.add("hidden");
   stories.forEach(displayStory);
 }
 
@@ -95,8 +98,10 @@ function displayStory(story, index) {
 
     // set clone data
     clone.querySelector("[data-field=title]").textContent = story.title;
-    clone.querySelector("[data-field=url]").textContent = story.url;
-    clone.querySelector("[data-field=url]").setAttribute("href", story.url);
+    if(story.url) {
+        clone.querySelector("[data-field=url]").textContent = story.url;
+        clone.querySelector("[data-field=url]").setAttribute("href", story.url);
+    }
     clone.querySelector("[data-field=timestamp]").textContent = story.timestamp;
     clone.querySelector("[data-field=score]").textContent = story.score;
     clone.querySelector("[data-field=author]").textContent = story.author;
