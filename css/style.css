@@ -1,5 +1,5 @@
 /* fonts */
-@font-face {
+/* @font-face {
     font-family: "Typo slab";
     src: url("fonts/typo_slab/TypoSlab_light_demo.otf");
   }
@@ -8,21 +8,33 @@
     font-family: "Whitin";
     src: url("fonts/Whitin-CondensedBlack.otf");
   }
-  
+   */
   /* general */
   html {
-    background-image: url("../images/bckg.png");
+    background-color: white;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     --brown: #d7b596;
+    --red: rgb(255, 0, 30);
+    --gray: #f3f0ef;
+    --dark-red: #c90219;
     /* background-color: var(--brown); */
   }
   
   body {
-    /* font-family: "Typo slab"; */
+    width: 100vw;
     margin: 0;
-    padding: 50px;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #loader {
+    text-align: center;
   }
   
   /* header */
@@ -31,9 +43,9 @@
     margin-bottom: 40px;
   }
   
-  h1 {
+  header h1 {
     display: block;
-    font-family: "Whitin";
+    font-family: "Arial", sans-serif;
     font-size: 5em;
     text-align: center;
     margin: 0;
@@ -47,19 +59,46 @@
   }
   
   h2 {
-    font-family: "Whitin";
+    font-family: "Arial", sans-serif;
     font-size: 2em;
   }
   
   .header-box {
-    border: 2px black solid;
     width: 150px;
-    height: 60px;
+    height: 80px;
     padding: 5px;
     text-align: center;
-    font-family: "Whitin";
-    font-size: 18px;
-    margin-top: 15px;
+    font-family: "Arial", sans-serif;
+    font-size: 25px;
+    margin: 25px;
+    background-color: BLACK;
+    color: white;
+    font-weight: 800;
+  }
+
+  #refresh-btn {
+    border: none;
+    background-color: var(--red);
+    color: white;
+    text-transform: uppercase;
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .divider {
+    background-color: var(--red);
+    width: 100%;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 1.875rem;
+    padding-top: 1.875rem;
+    margin-bottom: 3rem;
+  }
+
+  .divider h1 {
+    color: white;
+    font-family: "Arial", sans-serif;
   }
   
   .container {
@@ -68,16 +107,35 @@
     text-align: center;
     grid-gap: 20px;
     text-align: center;
+    margin: 20px 20px 0;
   }
   
   .page-desc {
-    font-family: "Whitin";
+    font-family: "Arial", sans-serif;
     font-size: 1.5em;
     text-align: center;
   }
   
   .single-story {
-    border-bottom: solid 2px black; 
+    background-color: var(--gray);
+    width: 60%;
+    padding: 2.5rem;
+    display: block;
+    margin: 0 auto 2.5rem;
+  }
+
+  .single-story h2 {
+    font-weight: 800;
+  }
+
+  .single-story p {
+    color: var(--dark-red);
+    font-weight: 800;
+  }
+
+  .single-story p span {
+    color: black;
+    font-weight: 100;
   }
   
   @keyframes expelling {
